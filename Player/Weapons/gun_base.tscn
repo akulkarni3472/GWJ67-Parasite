@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://c23nef22jev88"]
+
+[ext_resource type="Material" uid="uid://nos7s37uown" path="res://Player/Weapons/gun_mat.tres" id="1_ihhqh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ohf4f"]
+material = ExtResource("1_ihhqh")
+size = Vector3(0.2, 0.333, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1j41y"]
+material = ExtResource("1_ihhqh")
+size = Vector3(0.1, 0.1, 0.333)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cjcre"]
+material = ExtResource("1_ihhqh")
+size = Vector3(0.1, 0.2, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdoay"]
+size = Vector3(0.190674, 0.410645, 1.20239)
+
+[node name="GunBase" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156851, 0)
+mesh = SubResource("BoxMesh_ohf4f")
+
+[node name="barrel_mesh" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0196102, -0.542878)
+mesh = SubResource("BoxMesh_1j41y")
+
+[node name="sight_mesh" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.161785, -0.418867)
+mesh = SubResource("BoxMesh_cjcre")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MeshInstance3D/sight_mesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.072336, -0.055085)
+light_energy = 8.0
+light_indirect_energy = 8.0
+light_volumetric_fog_energy = 8.0
+spot_range = 8.0
+spot_angle = 32.9888
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00012207, 0.200049, -0.0968018)
+shape = SubResource("BoxShape3D_sdoay")
+
+[node name="BulletEmitter" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.174205, -0.725255)
