@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hq1ok")
-play_filepath = "res://Levels/Level1/level-1.tscn"
+play_filepath = "res://Levels/level-1.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

@@ -1,21 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://de7ykwabmgyb5"]
+[gd_scene load_steps=5 format=3 uid="uid://de7ykwabmgyb5"]
 
 [ext_resource type="PackedScene" uid="uid://c23nef22jev88" path="res://Player/Weapons/gun_base.tscn" id="1_cjkj2"]
 [ext_resource type="Script" path="res://Player/player.gd" id="1_ujo7x"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oke7m"]
-friction = 0.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2uabs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lbee3"]
 
-[node name="Player" type="RigidBody3D"]
+[node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
-physics_material_override = SubResource("PhysicsMaterial_oke7m")
 script = ExtResource("1_ujo7x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -24,12 +20,12 @@ mesh = SubResource("CapsuleMesh_2uabs")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_lbee3")
 
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.480232, 0)
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
-[node name="Camera3D" type="Camera3D" parent="Node3D"]
+[node name="Camera" type="Camera3D" parent="Head"]
 
-[node name="Node3D2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.701538, 0.0372148, -0.505621)
+[node name="WeaponMount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.763, 0, -0.36203)
 
-[node name="GunBase" parent="Node3D2" instance=ExtResource("1_cjkj2")]
+[node name="GunBase" parent="WeaponMount" instance=ExtResource("1_cjkj2")]

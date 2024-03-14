@@ -1,17 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://d234ib1l07eok"]
+[gd_scene load_steps=6 format=3 uid="uid://d234ib1l07eok"]
 
 [ext_resource type="PackedScene" uid="uid://de7ykwabmgyb5" path="res://Player/player.tscn" id="1_8wwit"]
+[ext_resource type="PackedScene" uid="uid://hy43fehokm4o" path="res://Player/Weapons/Bullet.tscn" id="2_mpqhp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nk2q7"]
 size = Vector3(30, 0.1, 30)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehnpp"]
+albedo_color = Color(0.411765, 0.0196078, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_vo2uq"]
+material = SubResource("StandardMaterial3D_ehnpp")
 size = Vector3(30, 0.1, 30)
 
 [node name="Level-1" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_8wwit")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0)
+
+[node name="Bullet" parent="Player" instance=ExtResource("2_mpqhp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.663239, 0.229102, 0.344078)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
