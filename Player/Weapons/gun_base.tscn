@@ -33,11 +33,11 @@ mesh = SubResource("BoxMesh_cjcre")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="MeshInstance3D/sight_mesh"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.072, -0.055)
-light_energy = 8.0
+light_energy = 16.0
 light_indirect_energy = 8.0
 light_volumetric_fog_energy = 8.0
-spot_range = 8.0
-spot_angle = 32.9888
+spot_range = 43.2656
+spot_angle = 44.7521
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, -0.107)

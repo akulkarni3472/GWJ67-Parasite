@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://ble444xsnaek4"]
+
+[ext_resource type="Material" uid="uid://cngmeo6103joa" path="res://Levels/Components/guts-shiny.tres" id="1_y4u1s"]
+
+[node name="Intestine-Bend" type="CSGTorus3D" groups=["gut-floor"]]
+transform = Transform3D(15.6317, 0, 0, 0, 15.6317, 0, 0, 0, 15.6317, -23.9802, 33.5683, -0.657748)
+use_collision = true
+inner_radius = 10.0
+outer_radius = 2.702
+material = ExtResource("1_y4u1s")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+operation = 2
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.046051, -0.106714, 5.76721)
+size = Vector3(20.3922, 6.698, 11.6909)
+material = ExtResource("1_y4u1s")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGCombiner3D"]
+inner_radius = 4.0
+outer_radius = 9.0
+material = ExtResource("1_y4u1s")

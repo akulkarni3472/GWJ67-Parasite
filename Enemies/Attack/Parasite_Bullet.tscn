@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8s8b12bl6vfm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wdvfb"]
+radius = 0.285581
+height = 0.951935
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_0riq6"]
+albedo_color = Color(0.0784314, 0.133333, 0.25098, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ggymf"]
+material = SubResource("ORMMaterial3D_0riq6")
+radius = 0.3
+rings = 10
+
+[node name="Bullet" type="RigidBody3D" groups=["enemy_bullet"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.325112, 0, 0, 0, -1.42111e-08, -0.325112, 0, 0.325112, -1.42111e-08, 0, -0.149662, 0)
+shape = SubResource("CapsuleShape3D_wdvfb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.325112, 0, 0, 0, -1.42111e-08, -0.325112, 0, 0.325112, -1.42111e-08, 1.38235e-05, -0.148888, 0)
+gi_mode = 2
+mesh = SubResource("SphereMesh_ggymf")

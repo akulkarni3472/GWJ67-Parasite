@@ -4,7 +4,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_pgfj8"]
 font_size = 60
-font_color = Color(0.592157, 0.858824, 0.309804, 1)
+font_color = Color(0.584314, 0.776471, 0.137255, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -38,7 +38,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Colon Cleanser"
+text = "Parasite Patrol"
 label_settings = SubResource("LabelSettings_pgfj8")
 
 [node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]

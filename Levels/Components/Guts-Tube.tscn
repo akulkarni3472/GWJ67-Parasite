@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlcwv3lgrqhp0"]
+
+[ext_resource type="Material" uid="uid://cngmeo6103joa" path="res://Levels/Components/guts-shiny.tres" id="1_16rqd"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0231876, 2.17317, 0.409012)
+use_collision = true
+radius = 4.0
+height = 15.0
+sides = 6
+material = ExtResource("1_16rqd")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+operation = 2
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D"]
+radius = 2.499
+height = 15.0
+sides = 6
+material = ExtResource("1_16rqd")
