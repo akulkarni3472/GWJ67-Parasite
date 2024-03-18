@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://d234ib1l07eok"]
+[gd_scene load_steps=9 format=3 uid="uid://d234ib1l07eok"]
 
 [ext_resource type="PackedScene" uid="uid://de7ykwabmgyb5" path="res://Player/player.tscn" id="1_8wwit"]
 [ext_resource type="PackedScene" uid="uid://ble444xsnaek4" path="res://Levels/Components/Guts-Bend.tscn" id="4_0b1wg"]
 [ext_resource type="PackedScene" uid="uid://bmt2g44swui7e" path="res://Levels/Components/Guts-End-Cap.tscn" id="4_donql"]
 [ext_resource type="PackedScene" uid="uid://dlcwv3lgrqhp0" path="res://Levels/Components/Guts-Tube.tscn" id="4_vtufu"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ljfup"]
+geometry_parsed_geometry_type = 2
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o4pam"]
 sky_top_color = Color(1, 0.388235, 0.305882, 1)
@@ -18,7 +21,7 @@ sky_material = SubResource("ProceduralSkyMaterial_o4pam")
 background_mode = 2
 sky = SubResource("Sky_btp7l")
 ambient_light_source = 2
-ambient_light_color = Color(1, 0.360784, 0.27451, 1)
+ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 ssr_enabled = true
 ssao_enabled = true
@@ -27,6 +30,10 @@ sdfgi_enabled = true
 glow_enabled = true
 
 [node name="Level-1" type="Node3D"]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99292, 0.118785, 0, -0.118785, 0.99292, -8.43748, 0, -18.4361)
+navigation_mesh = SubResource("NavigationMesh_ljfup")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8rvct")
